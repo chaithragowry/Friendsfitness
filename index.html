@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Friends Fitness - Transform You</title>
-     <!-- main css -->
-     <link rel="stylesheet" href="./assets/css/main.css">
-     <!-- fonts css -->
-     <link rel="stylesheet" href="./assets/css/fonts.css">
-     <!-- mobile css -->
-     <link rel="stylesheet" href="./assets/css/mobile.css">
+    <!-- main css -->
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <!-- fonts css -->
+    <link rel="stylesheet" href="./assets/css/fonts.css">
+    <!-- mobile css -->
+    <link rel="stylesheet" href="./assets/css/mobile.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap"
@@ -238,31 +238,41 @@
             <div class="thumbnail-column">
 
                 <div class="thumbnail-stack">
-                    <img src="./assets/images/testimonial-img1.jpg" alt="Client 1" class="thumbnail">
-                    <div class="active-thumbnail-wrapper">
-                        <img src="./assets/images/down-arrow.png" alt="" class="arrow-icon">
-                        <img src="./assets/images/testimonial-img2.jpg" alt="Client 2" class="thumbnail active">
+
+                    <div class="thumbnail-wrapper">
+                        <img src="./assets/images/testimonial-img1.jpg" alt="Client 1" class="thumbnail" data-index="0">
                     </div>
-                    <img src="./assets/images/testimonial-img3.jpg" alt="Client 3" class="thumbnail">
+
+                    <div class="thumbnail-wrapper">
+
+                        <img src="./assets/images/testimonial-img2.jpg" alt="Client 2" class="thumbnail active"
+                            data-index="1">
+                    </div>
+
+                    <div class="thumbnail-wrapper">
+                        <img src="./assets/images/testimonial-img3.jpg" alt="Client 3" class="thumbnail" data-index="2">
+                    </div>
+
+                    <img src="./assets/images/down-arrow.png" alt="" class="arrow-icon" id="carousel-arrow">
                 </div>
             </div>
 
             <div class="testimonial-card">
-                <p class="quote-text">
+                <p class="quote-text" id="quote-text">
                     Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The
                     Industry's Standard Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley. Lorem
                     Ipsum Has Been The Industry's Standard.
                 </p>
-                <p class="quote-subtext">
+                <p class="quote-subtext" id="quote-subtext">
                     Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The
                     Industry's Standard Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley.
                 </p>
                 <div class="reviewer-info">
                     <div class="reviewer-text">
-                        <h4 class="reviewer-name">Rose Martin</h4>
-                        <p class="reviewer-tag">Lorem Ipsum Is Simply Dummy</p>
+                        <h4 class="reviewer-name" id="reviewer-name">Rose Martin</h4>
+                        <p class="reviewer-tag" id="reviewer-tag">Lorem Ipsum Is Simply Dummy</p>
                     </div>
-                    <div class="star-rating">
+                    <div class="star-rating" id="star-rating">
                         <img src="./assets/images/star.png" class="star-icon" alt="star">
                         <img src="./assets/images/star.png" class="star-icon" alt="star">
                         <img src="./assets/images/star.png" class="star-icon" alt="star">
@@ -276,123 +286,205 @@
 
 
     <!-- section 5 -->
-<section class="section-coaching">
-    <div class="coaching-row">
-        <div class="column-left">
-            <img src="./assets/images/fifth-img1.png" alt="Coaching team" class="image-left">
-            <p class="caption-text">
-                Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been
-                The Industry's Standard Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley. Lorem
-                Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The
-                Industry.
-            </p>
-        </div>
-
-        <div class="column-right">
-            <h2 class="coaching-heading">Where Expert Coaching Meets<br>Lasting Fitness Results</h2>
-            <p class="coaching-desc">
-                Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry.
-                Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The
-                1500s, When An Unknown Printer Took A Galley.
-            </p>
-            <img src="./assets/images/fifth-img2.png" alt="Coaching trio" class="image-right">
-
-            <div class="last-row">
-                <div class="last-logo">
-                    <span class="logo-red">Friends</span><span class="logo-white">fitness</span>
-                </div>
-                <p class="last-text">
-                    Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry.
+    <section class="section-coaching">
+        <div class="coaching-row">
+            <div class="column-left">
+                <img src="./assets/images/fifth-img1.png" alt="Coaching team" class="image-left">
+                <p class="caption-text">
+                    Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been
+                    The Industry's Standard Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley.
+                    Lorem
+                    Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The
+                    Industry.
                 </p>
             </div>
+
+            <div class="column-right">
+                <h2 class="coaching-heading">Where Expert Coaching Meets<br>Lasting Fitness Results</h2>
+                <p class="coaching-desc">
+                    Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry.
+                    Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The
+                    1500s, When An Unknown Printer Took A Galley.
+                </p>
+                <img src="./assets/images/fifth-img2.png" alt="Coaching trio" class="image-right">
+
+                <div class="last-row">
+                    <div class="last-logo">
+                        <span class="logo-red">Friends</span><span class="logo-white">fitness</span>
+                    </div>
+                    <p class="last-text">
+                        Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry.
+                    </p>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
-<!-- section 6 -->
-<section class="section-free-trial">
-    <div class="free-trial-wrapper">
-        <img src="./assets/images/sixth-bg.png" alt="Location map" class="map-image">
+    <!-- section 6 -->
+    <section class="section-free-trial">
+        <div class="free-trial-wrapper">
+            <img src="./assets/images/sixth-bg.png" alt="Location map" class="map-image">
 
-        <div class="trial-box">
-            <img src="./assets/images/white-arrow.png" alt="" class="white-arrow-icon">
-            <h2 class="trial-heading">Expert Trainers Delivering<br>Real Fitness Results</h2>
-            <p class="trial-desc">
-                Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been
-                The Industry's
+            <div class="trial-box">
+                <img src="./assets/images/white-arrow.png" alt="" class="white-arrow-icon">
+                <h2 class="trial-heading">Expert Trainers Delivering<br>Real Fitness Results</h2>
+                <p class="trial-desc">
+                    Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been
+                    The Industry's
+                </p>
+                <a href="" class="btn-start-trial">START YOUR FREE TRAIL</a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- section footer -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="footer-logo">
+                <span class="logo-red">Friends</span><span class="logo-white">fitness</span>
+            </div>
+            <p class="footer-desc">
+                Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The
+                Industry's Standard
+                Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley. Lorem Ipsum Is Simply Dummy Text
+                Of The Printing
+                And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500.
             </p>
-            <a href="" class="btn-start-trial">START YOUR FREE TRAIL</a>
-        </div>
-    </div>
-</section>
 
+            <div class="gradient-line"></div>
 
+            <nav class="footer-nav">
+                <a href="" class="footer-link active">HOME</a>
+                <a href="" class="footer-link">GROUP TRAINING</a>
+                <a href="" class="footer-link">PERSONAL TRAINING</a>
+                <a href="" class="footer-link">OUR FACILITIES</a>
+                <a href="" class="footer-link">TESTIMONIALS</a>
+                <a href="" class="footer-link">GET IN TOUCH</a>
+            </nav>
 
-<!-- section footer -->
-<footer class="site-footer">
-    <div class="footer-top">
-        <div class="footer-logo">
-            <span class="logo-red">Friends</span><span class="logo-white">fitness</span>
-        </div>
-        <p class="footer-desc">
-            Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard
-            Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley. Lorem Ipsum Is Simply Dummy Text Of The Printing
-            And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500.
-        </p>
+            <div class="gradient-line"></div>
 
-        <div class="gradient-line"></div>
-
-        <nav class="footer-nav">
-            <a href="" class="footer-link active">HOME</a>
-            <a href="" class="footer-link">GROUP TRAINING</a>
-            <a href="" class="footer-link">PERSONAL TRAINING</a>
-            <a href="" class="footer-link">OUR FACILITIES</a>
-            <a href="" class="footer-link">TESTIMONIALS</a>
-            <a href="" class="footer-link">GET IN TOUCH</a>
-        </nav>
-
-        <div class="gradient-line"></div>
-
-        <div class="footer-info-cards">
-            <div class="info-card">
-                <img src="./assets/images/footer-icon.png" alt="" class="info-icon">
-                <span>Lorem Ipsum Is Simply</span>
-            </div>
-            <div class="info-card">
-                <img src="./assets/images/footer-icon.png" alt="" class="info-icon">
-                <span>Lorem Ipsum Is Simply</span>
-            </div>
-            <div class="info-card">
-                <img src="./assets/images/footer-icon.png" alt="" class="info-icon">
-                <span>Lorem Ipsum Is Simply</span>
-            </div>
-            <div class="info-card">
-                <img src="./assets/images/footer-icon.png" alt="" class="info-icon">
-                <span>Lorem Ipsum Is Simply</span>
+            <div class="footer-info-cards">
+                <div class="info-card">
+                    <img src="./assets/images/footer-icon.png" alt="" class="info-icon">
+                    <span>Lorem Ipsum Is Simply</span>
+                </div>
+                <div class="info-card">
+                    <img src="./assets/images/footer-icon.png" alt="" class="info-icon">
+                    <span>Lorem Ipsum Is Simply</span>
+                </div>
+                <div class="info-card">
+                    <img src="./assets/images/footer-icon.png" alt="" class="info-icon">
+                    <span>Lorem Ipsum Is Simply</span>
+                </div>
+                <div class="info-card">
+                    <img src="./assets/images/footer-icon.png" alt="" class="info-icon">
+                    <span>Lorem Ipsum Is Simply</span>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="footer-bottom-bar">
-        <div class="footer-bottom">
-        <p class="footer-copyright">
-            © 2026 Royalstyles. All right reserved. Developed by <span class="footer-brand">F5Decoders</span>.
-        </p>
-        <div class="footer-socials">
-            <a href="" class="social-icon insta-icon">
-                <img src="./assets/images/footer-insta.png" alt="Instagram">
-            </a>
-            <a href="" class="social-icon">
-                <img src="./assets/images/footer-utube.png" alt="YouTube">
-            </a>
-            <a href="" class="social-icon">
-                <img src="./assets/images/footer-fb.png" alt="Facebook">
-            </a>
+        <div class="footer-bottom-bar">
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2026 Royalstyles. All right reserved. Developed by <span class="footer-brand">F5Decoders</span>.
+                </p>
+                <div class="footer-socials">
+                    <a href="" class="social-icon">
+                        <img src="./assets/images/footer-insta.png" alt="Instagram">
+                    </a>
+                    <a href="" class="social-icon">
+                        <img src="./assets/images/footer-utube.png" alt="YouTube">
+                    </a>
+                    <a href="" class="social-icon">
+                        <img src="./assets/images/footer-fb.png" alt="Facebook">
+                    </a>
+                </div>
+            </div>
         </div>
-    </div>
-    </div>
-</footer>
+    </footer>
+
+
+
+
+    <script src="./assets/js/jquery-1.11.0.js"></script>
+
+    <!--testimonial carousel-->
+    <script>
+        $(document).ready(function () {
+
+            //testimonial content on right side
+            var testimonials = [
+                {
+                    quote: "Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley. Lorem Ipsum Has Been The Industry's Standard.",
+                    subtext: "Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s.",
+                    name: "Chad Michael",
+                    tag: "Lorem Ipsum Is Simply Dummy",
+                    stars: 5
+                },
+                {
+                    quote: "Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley. Lorem Ipsum Has Been The Industry's Standard.",
+                    subtext: "Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s.",
+                    name: "Rose Martin",
+                    tag: "Lorem Ipsum Is Simply Dummy",
+                    stars: 4
+                },
+                {
+                    quote: "Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley. Lorem Ipsum Has Been The Industry's Standard.",
+                    subtext: "Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s.",
+                    name: "Daniel",
+                    tag: "Lorem Ipsum Is Simply Dummy",
+                    stars: 3
+                }
+            ];
+
+            function updateStars(count) {
+                var starsCount = "";
+                for (var i = 0; i < 5; i++) {
+                    if (i < count) {
+                        starsCount = starsCount + '<img src="./assets/images/star.png" class="star-icon" alt="star" >';
+                    } else {
+                        starsCount = starsCount + '<img src="./assets/images/star-5.png" class="star-icon star-empty" alt="star">';
+                    }
+                }
+                $('#star-rating').html(starsCount);
+            }
+
+
+
+            $('.thumbnail').on('click', function () {
+
+                //remove the active (currently selected)
+                $('.thumbnail').removeClass('active');
+
+                //add active to the one that is selected
+                $(this).addClass('active');
+
+                var clickedThumb = $(this);
+
+                setTimeout(function () {
+                    var wrapper = clickedThumb.closest('.thumbnail-wrapper');
+                    var newTop = wrapper.position().top + (wrapper.outerHeight() / 2) - ($('#carousel-arrow').outerHeight() / 2);
+                    $('#carousel-arrow').css('top', newTop);
+                }, 300);
+
+
+                //card change based on data-index on imgs
+                var index = $(this).data('index');
+                var data = testimonials[index];
+
+                $('#quote-text').text(data.quote);
+                $('#quote-subtext').text(data.subtext);
+                $('#reviewer-name').text(data.name);
+                $('#reviewer-tag').text(data.tag);
+                updateStars(data.stars);
+
+            })
+        });
+    </script>
 
 </body>
 
