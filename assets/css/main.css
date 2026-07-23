@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     background-color: #000000;
     color: #ffffff;
@@ -207,6 +213,7 @@ body {
     margin-right: -22px;
     transition: transform 0.2s ease;
 }
+
 .row-img:hover {
     transform: translateY(-5px);
     z-index: 10;
@@ -368,15 +375,16 @@ body {
     font-size: 14px;
     outline: none;
 }
-.form-group input::placeholder{
-    color:#ffffff;
-    opacity:1;
+
+.form-group input::placeholder {
+    color: #ffffff;
+    opacity: 1;
 }
 
 .form-group input:focus,
-.form-group select:focus{
+.form-group select:focus {
     border-color: #e50914;
-    outline:none;
+    outline: none;
 }
 
 .select-wrapper {
@@ -430,6 +438,7 @@ body {
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 4px 15px rgba(229, 9, 20, 0.3);
 }
+
 .btn-form-book:hover {
     background-color: #f6121d;
     transform: translateY(-2px);
@@ -450,7 +459,7 @@ body {
 }
 
 .features-left {
-    flex: 0 0 60%;
+    flex: 0 0 calc(55% - 30px);
 }
 
 .features-heading {
@@ -484,6 +493,7 @@ body {
     z-index: 3;
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
+
 .feature-card:hover {
     transform: translateY(-5px);
     border-color: rgba(229, 9, 20, 0.3);
@@ -564,6 +574,7 @@ body {
     position: relative;
     display: flex;
     justify-content: center;
+    flex: 0 0 calc(40% - 30px);
 }
 
 .athlete-img {
@@ -705,8 +716,9 @@ body {
     box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
     letter-spacing: 0.5px;
     text-transform: uppercase;
-     transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
 .btn-focus-book:hover {
     background-color: #f6121d;
     transform: translateY(-2px);
@@ -762,15 +774,15 @@ body {
 }
 
 .arrow-icon {
-    position:absolute;
-    left:-32px;
+    position: absolute;
+    left: -32px;
     width: 20px;
     height: auto;
     transition: top 0.3s ease;
 }
 
 .thumbnail-stack {
-    position:relative;
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -881,8 +893,9 @@ body {
     object-fit: cover;
     border-radius: 0 60px 0 60px;
     margin-bottom: 20px;
-     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .image-left:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
@@ -919,8 +932,9 @@ body {
     object-fit: cover;
     border-radius: 60px 0 60px 0;
     margin-bottom: 30px;
-     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .image-right:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
@@ -978,8 +992,9 @@ body {
     padding: 30px 40px;
     text-align: center;
     z-index: 2;
-     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .trial-box:hover {
     transform: translateX(-50%) translateY(-5px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
@@ -1017,9 +1032,10 @@ body {
     letter-spacing: 0.5px;
     padding: 14px 32px;
     border-radius: 6px;
- transition: background-color 0.3s ease, transform 0.2s ease;
- box-shadow: 0 4px 15px rgba(229, 9, 20, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(229, 9, 20, 0.3);
 }
+
 .btn-start-trial:hover {
     background-color: #f6121d;
     transform: translateY(-2px);
@@ -1111,6 +1127,7 @@ body {
     border: 1px solid transparent;
     transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
 }
+
 .info-card:hover {
     transform: translateY(-4px);
     border-color: #e50914;
@@ -1167,7 +1184,8 @@ body {
     justify-content: center;
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
-.social-icon:hover{
+
+.social-icon:hover {
     transform: translateY(-4px);
     background-color: #e50914;
 }
@@ -1176,4 +1194,3 @@ body {
     width: 12px;
     height: 12px;
 }
-

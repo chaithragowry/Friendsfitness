@@ -416,6 +416,12 @@
     <script>
         $(document).ready(function () {
 
+            //Position the arrow correctly on page load
+            var activeThumb = $('.thumbnail.active');
+            var activeWrapper = activeThumb.closest('.thumbnail-wrapper');
+            var initialTop = activeWrapper.position().top + (activeWrapper.outerHeight() / 2) - ($('#carousel-arrow').outerHeight() / 2);
+            $('#carousel-arrow').css('top', initialTop);
+
             //testimonial content on right side
             var testimonials = [
                 {
