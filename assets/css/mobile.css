@@ -223,7 +223,7 @@
 
     .trial-box {
         width: 88%;
-        bottom: -100px;
+        bottom: -180px;
         padding: 28px 35px;
     }
 
@@ -518,7 +518,7 @@
 
     .trial-box {
         width: 90%;
-        bottom: -90px;
+        bottom: -160px;
         padding: 25px 30px;
     }
 
@@ -652,7 +652,8 @@
     }
 
     .features-container {
-        padding: 60px 20px 0 20px;
+        padding: 60px 20px 0px 20px;
+        margin-bottom: 30px;
     }
 
     .features-content {
@@ -662,6 +663,8 @@
 
     .features-left {
         flex: 0 0 100%;
+        padding: 50px 20px;
+        order: 2;
     }
 
     .features-heading {
@@ -687,6 +690,7 @@
     }
 
     .features-right {
+        order: -1;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -700,6 +704,10 @@
 
     .athlete-img {
         max-width: 300px;
+        -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+        filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.25));
+
     }
 
     .btn-form-book {
@@ -794,7 +802,33 @@
 
     .thumbnail-column {
         justify-content: center;
+        width: 100%;
+        display: flex;
     }
+
+    .thumbnail-stack {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        position: relative;
+        padding-bottom: 40px;
+    }
+
+    .thumbnail-wrapper {
+        position: relative;
+    }
+
+    .arrow-icon {
+        position: absolute;
+        left: 50%;
+        top: auto;
+        transform: translateX(-50%) rotate(-90deg);
+        width: 20px;
+        height: auto;
+        bottom: -70px;
+    }
+
 
     .testimonial-card {
         max-width: 100%;
@@ -802,7 +836,16 @@
         padding: 25px;
     }
 
+    .testimonial-card.fade-out {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
     .quote-text {
+        text-align: center;
+    }
+
+    .quote-subtext {
         text-align: center;
     }
 
@@ -824,6 +867,14 @@
     .coaching-row {
         flex-direction: column;
         gap: 60px;
+    }
+
+    .column-right {
+        order: -1;
+    }
+
+    .column-left {
+        order: 2;
     }
 
     .column-left,
@@ -874,7 +925,7 @@
 
     .trial-box {
         width: 90%;
-        bottom: -85px;
+        bottom: -140px;
         padding: 25px 25px;
         border-radius: 16px;
     }
@@ -1159,7 +1210,7 @@
 
     .trial-box {
         width: 90%;
-        bottom: -100px;
+        bottom: -120px;
         padding: 22px 18px;
         border-radius: 14px;
     }

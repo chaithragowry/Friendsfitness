@@ -240,20 +240,21 @@
                 <div class="thumbnail-stack">
 
                     <div class="thumbnail-wrapper">
-                        <img src="./assets/images/testimonial-img1.jpg" alt="Client 1" class="thumbnail" data-index="0">
+                        <img src="./assets/images/testimonial-img1.jpg" alt="Client 1" class="thumbnail" data-tid="0">
                     </div>
 
                     <div class="thumbnail-wrapper">
 
                         <img src="./assets/images/testimonial-img2.jpg" alt="Client 2" class="thumbnail active"
-                            data-index="1">
+                            data-tid="1">
+                        <img src="./assets/images/down-arrow.png" alt="" class="arrow-icon" id="carousel-arrow">
                     </div>
 
                     <div class="thumbnail-wrapper">
-                        <img src="./assets/images/testimonial-img3.jpg" alt="Client 3" class="thumbnail" data-index="2">
+                        <img src="./assets/images/testimonial-img3.jpg" alt="Client 3" class="thumbnail" data-tid="2">
                     </div>
 
-                    <img src="./assets/images/down-arrow.png" alt="" class="arrow-icon" id="carousel-arrow">
+
                 </div>
             </div>
 
@@ -416,15 +417,12 @@
     <script>
         $(document).ready(function () {
 
-            //Position the arrow correctly on page load
-            var activeThumb = $('.thumbnail.active');
-            var activeWrapper = activeThumb.closest('.thumbnail-wrapper');
-            var initialTop = activeWrapper.position().top + (activeWrapper.outerHeight() / 2) - ($('#carousel-arrow').outerHeight() / 2);
-            $('#carousel-arrow').css('top', initialTop);
+
 
             //testimonial content on right side
             var testimonials = [
                 {
+                    img: "./assets/images/testimonial-img1.jpg",
                     quote: "Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley. Lorem Ipsum Has Been The Industry's Standard.",
                     subtext: "Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s.",
                     name: "Chad Michael",
@@ -432,6 +430,7 @@
                     stars: 5
                 },
                 {
+                    img: "./assets/images/testimonial-img2.jpg",
                     quote: "Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley. Lorem Ipsum Has Been The Industry's Standard.",
                     subtext: "Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s.",
                     name: "Rose Martin",
@@ -439,6 +438,7 @@
                     stars: 4
                 },
                 {
+                    img: "./assets/images/testimonial-img3.jpg",
                     quote: "Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley. Lorem Ipsum Has Been The Industry's Standard.",
                     subtext: "Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s.",
                     name: "Daniel",
@@ -446,6 +446,8 @@
                     stars: 3
                 }
             ];
+
+            var order = [0, 1, 2];
 
             function updateStars(count) {
                 var starsCount = "";
@@ -460,35 +462,106 @@
             }
 
 
+            function renderSlots() {
+                var thumbnails = $('.thumbnail');
+
+                thumbnails.each(function (slotIndex) {
+                    var personId = order[slotIndex];
+                    var person = testimonials[personId];
+                    $(this).attr('src', person.img);
+                    $(this).attr('data-tid', personId);
+                });
+
+                var activePerson = testimonials[order[1]];
+
+                $('#quote-text').text(activePerson.quote);
+                $('#quote-subtext').text(activePerson.subtext);
+                $('#reviewer-name').text(activePerson.name);
+                $('#reviewer-tag').text(activePerson.tag);
+                updateStars(activePerson.stars);
+
+            }
+
+            function rotateNext() {
+                order.unshift(order.pop());
+                playTransition();
+            }
+            function rotatePrev() {
+                order.push(order.shift());
+                playTransition();
+            }
+
+            // Swipe detection on the thumbnail stack
+            var touchStartX = 0;
+            var touchEndX = 0;
+            var swipeThreshold = 40; // minimum px distance to count as a swipe
+
+            $('.thumbnail-stack').on('touchstart', function (e) {
+                touchStartX = e.originalEvent.touches[0].clientX;
+            });
+
+            $('.thumbnail-stack').on('touchend', function (e) {
+                touchEndX = e.originalEvent.changedTouches[0].clientX;
+                handleSwipe();
+            });
+
+            function handleSwipe() {
+                var distance = touchEndX - touchStartX;
+                  console.log('swipe distance:', distance);
+
+                if (Math.abs(distance) < swipeThreshold) {
+                    return; // too small, ignore (probably just a tap)
+                }
+
+                if (distance < 0) {
+                    // swiped left -> next
+                    rotateNext();
+                } else {
+                    // swiped right -> previous
+                    rotatePrev();
+                }
+
+                resetAutoplay();
+            }
+
+            //fade animation
+            function playTransition() {
+                $('.testimonial-card, .thumbnail-stack').addClass('fade-out');
+
+    setTimeout(function(){
+        renderSlots();
+        $('.testimonial-card, .thumbnail-stack').removeClass('fade-out');
+    }, 300);
+            }
+
+
+            //autoplay
+            var autoplayTimer;
+            function startAutoplay() {
+                autoplayTimer = setInterval(rotateNext, 4000);
+            }
+            function resetAutoplay() {
+                clearInterval(autoplayTimer);
+                startAutoplay();
+            }
+
 
             $('.thumbnail').on('click', function () {
-
-                //remove the active (currently selected)
-                $('.thumbnail').removeClass('active');
-
-                //add active to the one that is selected
-                $(this).addClass('active');
-
-                var clickedThumb = $(this);
-
-                setTimeout(function () {
-                    var wrapper = clickedThumb.closest('.thumbnail-wrapper');
-                    var newTop = wrapper.position().top + (wrapper.outerHeight() / 2) - ($('#carousel-arrow').outerHeight() / 2);
-                    $('#carousel-arrow').css('top', newTop);
-                }, 300);
+                var clickedId = $(this).data('tid');
 
 
-                //card change based on data-index on imgs
-                var index = $(this).data('index');
-                var data = testimonials[index];
+                var guard = 0;
+                while (order[1] !== clickedId && guard < 3) {
+                    order.unshift(order.pop());
+                    guard++;
+                }
 
-                $('#quote-text').text(data.quote);
-                $('#quote-subtext').text(data.subtext);
-                $('#reviewer-name').text(data.name);
-                $('#reviewer-tag').text(data.tag);
-                updateStars(data.stars);
+                playTransition();
+                resetAutoplay();
+            });
 
-            })
+            renderSlots();
+            startAutoplay();
         });
     </script>
 

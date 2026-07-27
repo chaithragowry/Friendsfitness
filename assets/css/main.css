@@ -780,7 +780,8 @@ body {
     left: -32px;
     width: 20px;
     height: auto;
-    transition: top 0.3s ease;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .thumbnail-stack {
@@ -788,6 +789,11 @@ body {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    transition: opacity 0.15s ease;
+}
+
+.thumbnail-stack.fade-out {
+    opacity: 0.3;
 }
 
 .thumbnail {
@@ -819,7 +825,13 @@ body {
     max-width: 700px;
     background-color: rgba(20, 20, 22, 0.6);
     border-radius: 16px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
     padding: 40px;
+}
+
+.testimonial-card.fade-out {
+    opacity: 0;
+    transform: translateY(15px);
 }
 
 .quote-text {
@@ -986,7 +998,7 @@ body {
 .trial-box {
     position: absolute;
     left: 50%;
-    bottom: -110px;
+    bottom: -190px;
     transform: translateX(-50%);
     width: 85%;
     background: linear-gradient(100deg, #910707 0%, #1d1a1a 100%);
